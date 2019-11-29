@@ -1,27 +1,13 @@
-<div class="container">
-
-  <div class="form-wrapper">
-    <h2 style="text-align: center; margin-bottom: 5%;">Players Portfolio</h2>
-    <!-- Button to Open the Modal -->
-    <div>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-        Click to Register
-      </button>
-    </div>
-
-    <div style="margin-top: 2%;">
-      <button type="button" class="btn btn-primary" (click)="showRegisteredPlayer()">
-        Registered players
-      </button>
-    </div>
-
+<div class="form-wrapper">
+  <div>
+    <button style="margin-left: 46%;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      Click to Register
+    </button>
   </div>
+</div>
 
-  <!-- <div class="green-banner" *ngIf="showBanner">
-        Data saved for {{studentDetails.name}} of {{studentDetails.age}} years.
-        Fees paid : {{studentDetails.fee}}
-    </div> -->
 
+<div class="container">
   <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -44,7 +30,7 @@
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 form-group inline">
               <label for="Date">Father's name:</label>
               <input type="text" class="form-control" id="text" placeholder="Enter name" name="fname"
-                [(ngModel)]="studentDetails.fname">
+                [(ngModel)]="studentDetails.fatherName">
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 form-group inline">
               <label for="Name">DOB :</label>
@@ -69,7 +55,7 @@
             <div class="form-group">
               <label for="Name">Total fee paid :</label>
               <input type="text" class="form-control" id="text" placeholder="Enter fee" name="fee"
-                [(ngModel)]="studentDetails.fee">
+                [(ngModel)]="studentDetails.tfp">
             </div>
             <button type="submit" class="btn btn-primary" (click)="showDetails(studentDetails);"
               data-dismiss="modal">Save</button>
@@ -82,5 +68,16 @@
   </div>
 </div>
 
-
-
+<table *ngIf="this.appService.getRegisteredEmployees().length>0" id="customers">
+  <tr>
+    <th (click)=sortBasedOnName(i) *ngFor="let headerName of tableHeader; let i =index"> {{headerName}}</th>
+  </tr>
+  <tr *ngFor="let player of this.appService.getRegisteredEmployees()">
+    <td>{{player.name}} </td>
+    <td>{{player.fatherName}} </td>
+    <td>{{player.dob}} </td>
+    <td>{{player.age}} </td>
+    <td>{{player.address1}} </td>
+    <td>{{player.tfp}} </td>
+  </tr>
+</table>
