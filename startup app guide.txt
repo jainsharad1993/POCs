@@ -1,0 +1,14 @@
+1:- download and install node.js from below url
+  https://nodejs.org/en/
+
+2:- npm install -g @angular/cli
+
+3:- npm install
+
+4:- npm install bootstrap
+
+5:- npm install flickity --save
+
+6:-  ng serve
+
+7:- open http://localhost:4200/
