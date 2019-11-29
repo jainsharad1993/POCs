@@ -1,0 +1,48 @@
+
+.fowrm-group {
+    padding-left: 20px;
+}
+.form-group.inline{
+    display : inline-block;
+}
+.container {
+    max-width: 1220px;
+    margin-top: 30px;
+    padding: 0;
+} 
+.form-wrapper {
+    padding: 50px 30px;
+    border: 1px solid #ddd;
+}
+button {
+    margin: 0 20px;
+}
+.green-banner {
+    margin: 30px;
+    background-color: green;
+    padding: 20px 10px;
+    color: #fff;
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
